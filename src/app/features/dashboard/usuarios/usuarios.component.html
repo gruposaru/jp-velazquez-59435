@@ -1,0 +1,86 @@
+<div class="container">
+ 
+  <h2 *appRepeat="2">Usuarios</h2>
+  <button mat-button (click)="openModal()">
+    <mat-icon>add</mat-icon>
+    crear usuario
+  </button>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td  color='blue'appResaltado mat-cell *matCellDef="let element">{{ element.firstname }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Apellido</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef>Fecha</th>
+          <td mat-cell *matCellDef="let element">{{ element.fecha| date }}</td>
+        </ng-container>
+
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button>
+          <mat-icon (click)="openModal(element)">edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDelete(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <h2>Formularios</h2>
+  <form></form>
+</div>
+
+<p>
+  <mat-icon>add-outline</mat-icon>
+</p>
+<div class="container">
+  <div class="row gy-3">
+    <div *ngFor="let item of [1, 2, 3, 4, 6, 7]" class="col-3">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, odit
+          consequuntur. Impedit, dolorum, voluptate consequatur totam doloribus
+          a repellendus voluptas odio, aperiam nam omnis quos sit aliquam?
+          Dolorem, nihil dolore.
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
