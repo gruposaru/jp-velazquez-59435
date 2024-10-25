@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserFullNamePipe } from './pipes/user-full-name.pipe';
 import { ResaltadoDirective } from './directive/resaltado.directive';
 import { RepeatDirective } from './directive/repeat.directive';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { RepeatDirective } from './directive/repeat.directive';
     MatTableModule,
     UserFullNamePipe,
     ResaltadoDirective,
-    RepeatDirective
+    RepeatDirective,
+    MatProgressSpinnerModule
     
     
     
