@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { usuario } from '../../features/dashboard/usuarios/models';
-import { delay, Observable, of } from 'rxjs';
+import { delay, map, Observable, of } from 'rxjs';
 
 let DATABASE: usuario[] = [
   {
@@ -31,6 +31,14 @@ let DATABASE: usuario[] = [
 })
 export class UsersService {
   constructor() {}
+
+//Obtenemos un usuario pir su ID
+  getById(id:string): Observable <usuario | undefined>{
+    return this.getUsers().pipe(
+      map((users)=>users.find((u)=>u.id===id)));
+  }
+
+
 
   //Obtenermos el objeto de tipo Usuario
   getUsers(): Observable<usuario[]> {

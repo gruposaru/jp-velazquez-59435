@@ -9,10 +9,11 @@ import {
   OverlayRef,
   PortalModule,
   TemplatePortal
-} from "./chunk-P2UYMQHO.js";
+} from "./chunk-JDJKABPU.js";
 import {
   CdkScrollable
-} from "./chunk-4VHPCTUT.js";
+} from "./chunk-D76L7TCH.js";
+import "./chunk-ZQDYI5T3.js";
 import {
   animate,
   animateChild,
@@ -35,7 +36,7 @@ import {
   _getFocusedElementPierceShadowDom,
   coerceNumberProperty,
   hasModifierKey
-} from "./chunk-CGHQD753.js";
+} from "./chunk-6M75VYJ3.js";
 import {
   DOCUMENT,
   Location

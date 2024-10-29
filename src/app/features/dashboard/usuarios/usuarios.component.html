@@ -50,6 +50,9 @@
         <button mat-icon-button>
           <mat-icon (click)="openModal(element)">edit</mat-icon>
         </button>
+        <button mat-icon-button>
+          <mat-icon (click)="goToDetail(element.id )">Visible</mat-icon>
+        </button>
         <button mat-icon-button (click)="onDelete(element.id)">
           <mat-icon>delete</mat-icon>
         </button>

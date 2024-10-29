@@ -4,6 +4,7 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { usuario } from './models';
 import { filter } from 'rxjs';
 import { UsersService } from '../../../core/services/users.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -24,7 +25,9 @@ export class UsuariosComponent implements OnInit {
 
   constructor(
     private matDialog: MatDialog,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private router:Router,
+    private activatedRoute:ActivatedRoute
   ) {}
   //Metodo del suclo de vida
   ngOnInit(): void {
@@ -62,6 +65,13 @@ export class UsuariosComponent implements OnInit {
         },
       });
     }
+  }
+
+  //Obtenemos los datos va verlos
+
+  goToDetail(id:string):void{
+
+this.router.navigate([id,'detail'],{relativeTo:this.activatedRoute});
   }
 //Metodo que nos habre el modal 
   openModal(editingUser?: usuario): void {
