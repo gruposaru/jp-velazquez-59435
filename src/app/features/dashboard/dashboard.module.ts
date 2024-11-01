@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import {MatListModule} from '@angular/material/list';
+import { MaestrosModule } from './maestros/maestros.module';
 
 
 
@@ -26,7 +27,8 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     UsuariosModule,
-    MatListModule
+    MatListModule,
+    MaestrosModule
   ],
   exports: [
     DashboardComponent,
